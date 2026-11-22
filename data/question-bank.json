@@ -1,0 +1,2141 @@
+{
+  "schemaVersion": 1,
+  "bankVersion": "2.0.0",
+  "generatedAt": "2026-11-18T15:01:51.490Z",
+  "questions": [
+    {
+      "id": "circuit-001",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "一个 12 V 理想电压源连接 6 Ω 电阻，稳态电流是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.5 A"
+        },
+        {
+          "id": "B",
+          "text": "2 A"
+        },
+        {
+          "id": "C",
+          "text": "6 A"
+        },
+        {
+          "id": "D",
+          "text": "72 A"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "根据欧姆定律 I = V / R = 12 V / 6 Ω = 2 A。理想模型中全部电压都施加在电阻上；实际设计还需校核功耗 P = V² / R = 24 W。",
+      "keyPoints": [
+        "先统一电压与电阻单位",
+        "线性电阻使用 I = V / R",
+        "除电流外还要校核额定功率"
+      ],
+      "terminology": [
+        {
+          "englishName": "Ohm's Law",
+          "chineseName": "欧姆定律",
+          "role": "描述线性电阻中电压、电流与电阻的关系，是直流电路定量分析的基础。"
+        }
+      ]
+    },
+    {
+      "id": "analog-001",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "理想运算放大器在线性负反馈状态下，“虚短”的正确含义是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "两个输入端被导线短接"
+        },
+        {
+          "id": "B",
+          "text": "同相端与反相端电位近似相等"
+        },
+        {
+          "id": "C",
+          "text": "输出端与反相端电流相等"
+        },
+        {
+          "id": "D",
+          "text": "正负电源电压相等"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "开环增益足够大且输出未饱和时，负反馈使差分输入电压很小，因此 V+ ≈ V−。两端并未物理短接，理想输入电流仍近似为零。",
+      "keyPoints": [
+        "只适用于线性负反馈",
+        "先确认输出未饱和",
+        "虚短不是实际短路"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Op-Amp",
+          "englishName": "Operational Amplifier",
+          "chineseName": "运算放大器",
+          "role": "高增益放大两个输入端的差分电压，用于放大、滤波和信号调理。"
+        },
+        {
+          "englishName": "Negative Feedback",
+          "chineseName": "负反馈",
+          "role": "把输出的一部分反向送回输入，以稳定闭环增益并改善线性度。"
+        }
+      ]
+    },
+    {
+      "id": "digital-001",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "同步电路中，触发器的建立时间要求数据满足什么条件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "有效时钟沿之后稳定一段时间"
+        },
+        {
+          "id": "B",
+          "text": "有效时钟沿之前提前稳定一段时间"
+        },
+        {
+          "id": "C",
+          "text": "时钟频率必须为零"
+        },
+        {
+          "id": "D",
+          "text": "数据必须始终与时钟反相"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "建立时间是有效时钟沿到来之前，数据必须稳定的最短时间；有效沿之后仍需稳定的最短时间称为保持时间。违反约束可能引发亚稳态。",
+      "keyPoints": [
+        "建立时间位于采样沿之前",
+        "保持时间位于采样沿之后",
+        "时序违例可能引发亚稳态"
+      ],
+      "terminology": [
+        {
+          "englishName": "Setup Time",
+          "chineseName": "建立时间",
+          "role": "规定数据在有效时钟沿之前必须稳定的最短时间，保证可靠采样。"
+        },
+        {
+          "englishName": "Metastability",
+          "chineseName": "亚稳态",
+          "role": "触发器因时序约束被破坏而暂时无法确定为逻辑 0 或 1 的状态。"
+        }
+      ]
+    },
+    {
+      "id": "device-001",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "低压大电流变换器中，MOSFET 导通损耗的主要近似表达式是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "P ≈ I_RMS² × R_DS(on)"
+        },
+        {
+          "id": "B",
+          "text": "P ≈ V_GS / I_D"
+        },
+        {
+          "id": "C",
+          "text": "P ≈ C_OSS / f_SW"
+        },
+        {
+          "id": "D",
+          "text": "P ≈ V_DS² × f_SW"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "MOSFET 完全增强后可近似为导通电阻，因此损耗约为 I_RMS² × R_DS(on)。R_DS(on) 随结温升高而增大，计算时应使用目标结温下的值。",
+      "keyPoints": [
+        "使用 RMS 电流",
+        "考虑导通电阻的温度系数",
+        "总损耗还包含开关与驱动损耗"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "MOSFET",
+          "englishName": "Metal-Oxide-Semiconductor Field-Effect Transistor",
+          "chineseName": "金属氧化物半导体场效应晶体管",
+          "role": "作为电压驱动的功率开关，控制变换器中的能量传递。"
+        },
+        {
+          "abbreviation": "R_DS(on)",
+          "englishName": "Drain-to-Source On-State Resistance",
+          "chineseName": "漏源导通电阻",
+          "role": "表征 MOSFET 导通时漏极至源极的等效电阻，直接影响导通损耗。"
+        }
+      ]
+    },
+    {
+      "id": "topology-001",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "理想连续导通模式 Buck 变换器输入 24 V、占空比 25%，输出约为多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3 V"
+        },
+        {
+          "id": "B",
+          "text": "6 V"
+        },
+        {
+          "id": "C",
+          "text": "12 V"
+        },
+        {
+          "id": "D",
+          "text": "96 V"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "理想 Buck 变换器在连续导通模式下满足 V_OUT = D × V_IN，因此输出为 0.25 × 24 V = 6 V。实际值还受开关压降与寄生电阻影响。",
+      "keyPoints": [
+        "Buck 用于降压",
+        "理想稳态变换比为占空比 D",
+        "公式以连续导通和理想器件为前提"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Buck Converter",
+          "englishName": "Step-Down Converter",
+          "chineseName": "降压变换器",
+          "role": "通过开关、电感和电容将较高直流电压高效转换为较低直流电压。"
+        },
+        {
+          "abbreviation": "CCM",
+          "englishName": "Continuous Conduction Mode",
+          "chineseName": "连续导通模式",
+          "role": "电感电流在整个开关周期内始终不降为零的工作模式。"
+        }
+      ]
+    },
+    {
+      "id": "control-001",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "开关电源闭环设计中，相位裕度的主要工程意义是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "表示输出电压绝对精度"
+        },
+        {
+          "id": "B",
+          "text": "衡量增益交越处距离失稳条件的相位余量"
+        },
+        {
+          "id": "C",
+          "text": "等于功率器件最大占空比"
+        },
+        {
+          "id": "D",
+          "text": "表示输入滤波器直流电阻"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "相位裕度是在环路增益为 0 dB 的增益交越频率处，相位与 −180° 的距离。适当裕度表示系统对参数变化和延迟具有稳定性余量。",
+      "keyPoints": [
+        "在 0 dB 交越频率处读取",
+        "过低容易振铃甚至振荡",
+        "需与带宽和动态响应权衡"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "PM",
+          "englishName": "Phase Margin",
+          "chineseName": "相位裕度",
+          "role": "衡量反馈系统在增益交越点距离 −180° 失稳条件的余量。"
+        },
+        {
+          "englishName": "Loop Gain",
+          "chineseName": "环路增益",
+          "role": "描述信号绕反馈环路一周后的复数增益，决定带宽与稳定性。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-001",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "开关电源 PCB 中，为什么要缩小高 di/dt 电流环路面积？",
+      "options": [
+        {
+          "id": "A",
+          "text": "增加寄生电感"
+        },
+        {
+          "id": "B",
+          "text": "降低寄生电感、尖峰和辐射发射"
+        },
+        {
+          "id": "C",
+          "text": "提高直流铜阻"
+        },
+        {
+          "id": "D",
+          "text": "让全部信号共用细回流线"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "高变化率电流通过寄生电感产生 L × di/dt 尖峰，环路也会形成磁场辐射。缩短正向及回流路径、减小环路面积，可改善波形与电磁兼容性。",
+      "keyPoints": [
+        "识别脉动电流环路",
+        "去耦电容靠近开关器件",
+        "同时考虑正向与回流路径"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "PCB",
+          "englishName": "Printed Circuit Board",
+          "chineseName": "印制电路板",
+          "role": "承载和连接器件，其布局布线影响寄生参数、热性能和信号完整性。"
+        },
+        {
+          "abbreviation": "EMC",
+          "englishName": "Electromagnetic Compatibility",
+          "chineseName": "电磁兼容性",
+          "role": "保证设备在电磁环境中正常工作且不产生不可接受的电磁干扰。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-001",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "I²C 总线的 SDA 与 SCL 通常需要上拉电阻，根本原因是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "总线采用开漏结构，器件只能主动拉低"
+        },
+        {
+          "id": "B",
+          "text": "上拉用于产生负电源"
+        },
+        {
+          "id": "C",
+          "text": "上拉把数字信号转换为模拟量"
+        },
+        {
+          "id": "D",
+          "text": "器件只能永久处于高阻态"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "I²C 时钟和数据线采用开漏连接。器件可以主动拉低总线，而高电平由上拉电阻建立，从而支持线与、应答、仲裁和时钟延展。",
+      "keyPoints": [
+        "器件主动拉低，电阻建立高电平",
+        "阻值过大会造成上升沿过慢",
+        "阻值过小会增加灌电流和功耗"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "I²C",
+          "englishName": "Inter-Integrated Circuit",
+          "chineseName": "集成电路互连总线",
+          "role": "使用串行数据线和时钟线连接控制器与多个低速外设。"
+        },
+        {
+          "englishName": "Open-Drain Output",
+          "chineseName": "开漏输出",
+          "role": "晶体管只能主动拉低节点，释放后由外部上拉形成高电平，便于多器件共享总线。"
+        }
+      ]
+    },
+    {
+      "id": "circuit-002",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "某节点有 3 A 和 2 A 电流流入，已有 1 A 电流流出，则另一支路流出电流是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 A"
+        },
+        {
+          "id": "B",
+          "text": "2 A"
+        },
+        {
+          "id": "C",
+          "text": "4 A"
+        },
+        {
+          "id": "D",
+          "text": "6 A"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "依据基尔霍夫电流定律，节点流入电流之和等于流出电流之和，因此 3 A + 2 A = 1 A + I，得到 I = 4 A。",
+      "keyPoints": [
+        "先统一电流参考方向",
+        "节点不持续积累电荷",
+        "列式后检查流入与流出是否守恒"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "KCL",
+          "englishName": "Kirchhoff's Current Law",
+          "chineseName": "基尔霍夫电流定律",
+          "role": "依据电荷守恒描述节点电流关系，是节点电压法的基础。"
+        }
+      ]
+    },
+    {
+      "id": "analog-002",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "对单主极点补偿运放，闭环噪声增益增大时，小信号闭环带宽通常如何变化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "近似按反比例减小"
+        },
+        {
+          "id": "B",
+          "text": "保持无限大"
+        },
+        {
+          "id": "C",
+          "text": "一定按平方增加"
+        },
+        {
+          "id": "D",
+          "text": "只由电源电压决定"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "单主极点运放在简化条件下满足闭环带宽约等于增益带宽积除以噪声增益。噪声增益越大，闭环带宽通常越小；实际还需检查相位裕度、压摆率和负载。",
+      "keyPoints": [
+        "使用噪声增益而非只看信号增益",
+        "近似关系适用于单主极点区间",
+        "大信号响应还受压摆率限制"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "GBW",
+          "englishName": "Gain-Bandwidth Product",
+          "chineseName": "增益带宽积",
+          "role": "近似表征单主极点运放闭环增益与小信号带宽的乘积，用于初步估算带宽。"
+        }
+      ]
+    },
+    {
+      "id": "device-002",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "提高 MOSFET 开关频率时，为什么必须关注总栅极电荷 Qg？",
+      "options": [
+        {
+          "id": "A",
+          "text": "Qg 决定直流导线电阻"
+        },
+        {
+          "id": "B",
+          "text": "驱动器需反复搬运栅极电荷，驱动功耗约随 Qg 与频率增加"
+        },
+        {
+          "id": "C",
+          "text": "Qg 只影响封装颜色"
+        },
+        {
+          "id": "D",
+          "text": "Qg 会直接设定输出电压"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "MOSFET 每次开关都需要栅极驱动器充放电。驱动功耗可近似为 P_GATE = Qg × V_GS × f_SW；栅极电流能力还会影响米勒平台持续时间和开关损耗。",
+      "keyPoints": [
+        "Qg 越大，给定频率下驱动损耗越高",
+        "驱动峰值电流影响开关速度",
+        "选型需平衡导通电阻与栅极电荷"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Qg",
+          "englishName": "Total Gate Charge",
+          "chineseName": "总栅极电荷",
+          "role": "表示完成一次规定条件下栅极电压变化所需搬运的电荷，用于评估驱动能力和功耗。"
+        }
+      ]
+    },
+    {
+      "id": "topology-002",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "隔离型 Flyback 变换器在主开关导通期间，次级整流二极管通常处于什么状态？",
+      "options": [
+        {
+          "id": "A",
+          "text": "正向导通并向负载传能"
+        },
+        {
+          "id": "B",
+          "text": "反向截止，能量存入磁化电感"
+        },
+        {
+          "id": "C",
+          "text": "处于线性放大状态"
+        },
+        {
+          "id": "D",
+          "text": "短路输入电源"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "主开关导通时次级二极管反偏，输入能量储存在磁化电感中；主开关关断后绕组极性反转，次级二极管导通并向输出释放能量。",
+      "keyPoints": [
+        "原边储能与副边放能分时进行",
+        "磁性器件承担隔离与储能",
+        "气隙有助于储能并避免磁芯饱和"
+      ],
+      "terminology": [
+        {
+          "englishName": "Flyback Converter",
+          "chineseName": "反激变换器",
+          "role": "利用耦合电感分时储存和释放能量，实现常见的隔离型直流变换。"
+        },
+        {
+          "englishName": "Magnetizing Inductance",
+          "chineseName": "磁化电感",
+          "role": "表征建立主磁通所需的等效电感，在反激变换器中承担主要储能。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-002",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "数字芯片的高频去耦电容通常应优先放置在哪里？",
+      "options": [
+        {
+          "id": "A",
+          "text": "尽量靠近芯片电源脚和对应地回流点"
+        },
+        {
+          "id": "B",
+          "text": "放在 PCB 最远角落"
+        },
+        {
+          "id": "C",
+          "text": "串联在时钟线上"
+        },
+        {
+          "id": "D",
+          "text": "只放在外部电源入口即可"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "高频去耦的目标是为芯片瞬态电流提供低阻抗、低电感的局部回路。电容靠近电源脚并缩短到地平面的回流路径，可减小寄生电感和电源噪声。",
+      "keyPoints": [
+        "重点是缩小供电与回流环路",
+        "过孔与走线都会引入寄生电感",
+        "入口大电容不能替代芯片旁高频去耦"
+      ],
+      "terminology": [
+        {
+          "englishName": "Decoupling Capacitor",
+          "chineseName": "去耦电容",
+          "role": "在负载附近提供瞬态电流并旁路高频噪声，降低电源分配网络阻抗。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-002",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "测量离线反激电源原边开关节点时，最安全且合适的常用方案是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "普通探头地夹接到任意原边节点"
+        },
+        {
+          "id": "B",
+          "text": "断开示波器保护地后测量"
+        },
+        {
+          "id": "C",
+          "text": "使用额定范围与带宽合适的高压差分探头"
+        },
+        {
+          "id": "D",
+          "text": "万用表电流档并联开关管"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "台式示波器普通探头地夹通常与保护地相连，误接原边节点可能造成短路、触电或设备损坏。应使用共模范围、差模范围、带宽和安全等级都满足要求的高压差分探头，绝不能断开保护地制造浮地示波器。",
+      "keyPoints": [
+        "先确认被测系统是否隔离",
+        "普通探头地夹通常连接保护地",
+        "差分探头也必须遵守电压和安全等级降额"
+      ],
+      "terminology": [
+        {
+          "englishName": "Oscilloscope",
+          "chineseName": "示波器",
+          "role": "显示信号随时间变化的波形，用于测量幅值、频率、纹波和瞬态。"
+        },
+        {
+          "englishName": "High-Voltage Differential Probe",
+          "chineseName": "高压差分探头",
+          "role": "在额定共模范围内测量两个非地节点间电压，并向示波器提供适当隔离与衰减。"
+        }
+      ]
+    },
+    {
+      "id": "circuit-003",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "mit-6002"
+      ],
+      "title": "某线性二端网络的开路电压为 12 V，短路电流为 3 A，其戴维南等效电阻是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.25 Ω"
+        },
+        {
+          "id": "B",
+          "text": "4 Ω"
+        },
+        {
+          "id": "C",
+          "text": "9 Ω"
+        },
+        {
+          "id": "D",
+          "text": "36 Ω"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "戴维南电阻可由 R_TH = V_OC / I_SC 求得，因此为 12 V / 3 A = 4 Ω。该方法适用于线性网络，并要求短路测试在安全条件下成立。",
+      "keyPoints": [
+        "开路电压等于戴维南电压",
+        "短路电流用于求等效内阻",
+        "实际电源不一定允许直接短路测量"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Thevenin Equivalent",
+          "englishName": "Thevenin Equivalent Circuit",
+          "chineseName": "戴维南等效电路",
+          "role": "把线性二端网络化简为理想电压源串联等效电阻，便于分析负载变化。"
+        }
+      ]
+    },
+    {
+      "id": "circuit-004",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "mit-6002"
+      ],
+      "title": "10 kΩ 电阻与 10 μF 电容组成一阶 RC 充电电路，时间常数约为多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1 ms"
+        },
+        {
+          "id": "B",
+          "text": "10 ms"
+        },
+        {
+          "id": "C",
+          "text": "100 ms"
+        },
+        {
+          "id": "D",
+          "text": "1 s"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "时间常数 τ = RC = 10 000 Ω × 10 μF = 0.1 s，即 100 ms。充电一个时间常数后，电容电压达到最终值约 63.2%。",
+      "keyPoints": [
+        "先把 μF 换算为 F",
+        "一阶响应速度由 RC 决定",
+        "约 5τ 后通常可视为基本稳定"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "RC",
+          "englishName": "Resistor-Capacitor Time Constant",
+          "chineseName": "电阻电容时间常数",
+          "role": "描述一阶 RC 电路充放电速度和瞬态持续时间。"
+        }
+      ]
+    },
+    {
+      "id": "circuit-005",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "理想电容接入直流电路并达到稳态后，应采用哪种等效模型？",
+      "options": [
+        {
+          "id": "A",
+          "text": "短路"
+        },
+        {
+          "id": "B",
+          "text": "开路"
+        },
+        {
+          "id": "C",
+          "text": "恒流源"
+        },
+        {
+          "id": "D",
+          "text": "负电阻"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "稳态直流下电容两端电压不再变化，i = C·dv/dt = 0，因此理想电容等效为开路。瞬态期间则不能用开路模型。",
+      "keyPoints": [
+        "稳态与瞬态模型不同",
+        "电容电压不能突变",
+        "实际电容仍有漏电和等效串联电阻"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "ESR",
+          "englishName": "Equivalent Series Resistance",
+          "chineseName": "等效串联电阻",
+          "role": "描述实际电容内部损耗，影响纹波电压、发热和高频阻抗。"
+        }
+      ]
+    },
+    {
+      "id": "circuit-006",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "mit-6002"
+      ],
+      "title": "理想电感在开关瞬间最重要的连续性约束是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "电感电流不能瞬间突变"
+        },
+        {
+          "id": "B",
+          "text": "电感电压始终为零"
+        },
+        {
+          "id": "C",
+          "text": "电感功率恒定"
+        },
+        {
+          "id": "D",
+          "text": "电感阻抗与频率无关"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "由 v = L·di/dt 可知，有限电压不能使电流在零时间内发生有限跳变。因此电感电流在开关前后连续，但电感电压可以突变。",
+      "keyPoints": [
+        "电感储存磁场能量",
+        "电流连续不代表电压连续",
+        "强行中断电流会产生高压尖峰"
+      ],
+      "terminology": [
+        {
+          "englishName": "Inductor Current Continuity",
+          "chineseName": "电感电流连续性",
+          "role": "约束开关瞬间的电感状态，是分析电源换相和瞬态过程的基础。"
+        }
+      ]
+    },
+    {
+      "id": "analog-003",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "ti-precision-labs"
+      ],
+      "title": "理想同相运算放大器中，反馈电阻 Rf = 9 kΩ、接地电阻 Rg = 1 kΩ，闭环增益是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "9"
+        },
+        {
+          "id": "B",
+          "text": "10"
+        },
+        {
+          "id": "C",
+          "text": "11"
+        },
+        {
+          "id": "D",
+          "text": "−9"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "同相放大器增益 A_V = 1 + Rf/Rg = 1 + 9/1 = 10。实际设计还需检查增益带宽积、输入共模范围与输出摆幅。",
+      "keyPoints": [
+        "同相增益最小为 1",
+        "反馈网络决定噪声增益",
+        "闭环带宽随增益增大而降低"
+      ],
+      "terminology": [
+        {
+          "englishName": "Non-Inverting Amplifier",
+          "chineseName": "同相放大器",
+          "role": "在不反转信号极性的情况下提供由负反馈电阻网络设定的电压增益。"
+        }
+      ]
+    },
+    {
+      "id": "analog-004",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "ti-precision-labs"
+      ],
+      "title": "正弦输出峰值为 5 V、频率为 100 kHz，运放所需最低压摆率约为多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.31 V/μs"
+        },
+        {
+          "id": "B",
+          "text": "3.14 V/μs"
+        },
+        {
+          "id": "C",
+          "text": "31.4 V/μs"
+        },
+        {
+          "id": "D",
+          "text": "314 V/μs"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "正弦波最大斜率 SR = 2πfV_P = 2π × 100 kHz × 5 V ≈ 3.14 V/μs。工程上还应保留裕量，避免大信号失真。",
+      "keyPoints": [
+        "使用峰值而不是峰峰值",
+        "压摆率限制属于大信号性能",
+        "带宽足够也可能因压摆率不足失真"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "SR",
+          "englishName": "Slew Rate",
+          "chineseName": "压摆率",
+          "role": "表示运放输出电压最大变化速度，决定大幅高频信号能否无失真跟随。"
+        }
+      ]
+    },
+    {
+      "id": "analog-005",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "ti-precision-labs"
+      ],
+      "title": "差分测量中，提高运放的 CMRR 主要能够抑制什么误差？",
+      "options": [
+        {
+          "id": "A",
+          "text": "两个输入端共同存在的共模信号"
+        },
+        {
+          "id": "B",
+          "text": "反馈电阻热噪声的全部成分"
+        },
+        {
+          "id": "C",
+          "text": "输出短路电流"
+        },
+        {
+          "id": "D",
+          "text": "电源转换效率损失"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "CMRR 表示差分放大器拒绝两输入端共同变化信号的能力。CMRR 越高，相同共模电压转化为输出误差的比例越低。",
+      "keyPoints": [
+        "共模信号不等于差分信号",
+        "电阻匹配会影响实际 CMRR",
+        "高共模电压仍不能超过输入允许范围"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "CMRR",
+          "englishName": "Common-Mode Rejection Ratio",
+          "chineseName": "共模抑制比",
+          "role": "衡量放大器抑制共模输入并保留差分信号的能力。"
+        }
+      ]
+    },
+    {
+      "id": "analog-006",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "microelectronic-circuits"
+      ],
+      "title": "双极型输入运放中，在同相端增加补偿电阻的主要目的是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "匹配两输入端所见直流电阻，减小输入偏置电流引起的失调"
+        },
+        {
+          "id": "B",
+          "text": "提高电源电压"
+        },
+        {
+          "id": "C",
+          "text": "消除全部宽带噪声"
+        },
+        {
+          "id": "D",
+          "text": "令输出进入饱和"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "当两输入端所见等效电阻接近时，输入偏置电流造成的压降可部分相互抵消。补偿电阻通常取反相端所见电阻的等效值。",
+      "keyPoints": [
+        "补偿针对平均偏置电流影响",
+        "输入失调电流仍会造成残余误差",
+        "电阻同时会贡献热噪声"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "I_B",
+          "englishName": "Input Bias Current",
+          "chineseName": "输入偏置电流",
+          "role": "为运放输入级晶体管提供工作点的小电流，会在源阻抗上产生附加失调电压。"
+        }
+      ]
+    },
+    {
+      "id": "digital-002",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "触发器的保持时间要求数据满足什么条件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "在有效时钟沿之后继续稳定一段最短时间"
+        },
+        {
+          "id": "B",
+          "text": "只在时钟沿之前稳定"
+        },
+        {
+          "id": "C",
+          "text": "与时钟频率始终相等"
+        },
+        {
+          "id": "D",
+          "text": "必须在时钟沿立即翻转"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "保持时间是有效采样沿之后数据仍需保持稳定的最短时间。建立时间位于采样沿之前，两者共同定义触发器的采样窗口。",
+      "keyPoints": [
+        "保持检查关注最短数据路径",
+        "提高时钟周期通常不能直接修复保持违例",
+        "布线偏斜也会影响保持裕量"
+      ],
+      "terminology": [
+        {
+          "englishName": "Hold Time",
+          "chineseName": "保持时间",
+          "role": "规定数据在有效时钟沿之后必须继续稳定的最短时间，保证触发器可靠锁存。"
+        }
+      ]
+    },
+    {
+      "id": "digital-003",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "intel-metastability"
+      ],
+      "title": "单比特异步信号进入同步时钟域时，常用两级触发器同步器的主要作用是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "降低亚稳态传播到后级逻辑的概率"
+        },
+        {
+          "id": "B",
+          "text": "保证多比特总线同时更新"
+        },
+        {
+          "id": "C",
+          "text": "产生模拟滤波效果"
+        },
+        {
+          "id": "D",
+          "text": "提高输入电压幅值"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "第一级触发器可能进入亚稳态，第二级为其提供一个时钟周期的恢复时间，从而显著提高平均故障间隔。它不能保证多比特数据一致性。",
+      "keyPoints": [
+        "适用于单比特电平信号",
+        "多比特数据通常使用握手或异步 FIFO",
+        "同步器不能彻底消除亚稳态"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "CDC",
+          "englishName": "Clock Domain Crossing",
+          "chineseName": "时钟域跨越",
+          "role": "处理信号在不同或异步时钟域之间传递时的采样一致性与亚稳态风险。"
+        }
+      ]
+    },
+    {
+      "id": "digital-004",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "同步逻辑的最大时钟频率主要受哪条路径限制？",
+      "options": [
+        {
+          "id": "A",
+          "text": "寄存器到寄存器的最长组合逻辑路径"
+        },
+        {
+          "id": "B",
+          "text": "最短接地线"
+        },
+        {
+          "id": "C",
+          "text": "电源入口保险丝"
+        },
+        {
+          "id": "D",
+          "text": "未使用引脚数量"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "建立时间约束要求时钟周期覆盖时钟到输出延迟、最长组合逻辑延迟、建立时间及偏斜裕量，因此关键路径决定最高可用频率。",
+      "keyPoints": [
+        "最长路径对应建立时间约束",
+        "最短路径常对应保持约束",
+        "流水线可以缩短单级组合路径"
+      ],
+      "terminology": [
+        {
+          "englishName": "Critical Path",
+          "chineseName": "关键路径",
+          "role": "同步数字系统中总延迟最大的时序路径，通常限制可达到的最高时钟频率。"
+        }
+      ]
+    },
+    {
+      "id": "digital-005",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "施密特触发输入相较普通数字输入的主要优势是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "具有迟滞，可提高慢边沿或噪声信号的抗扰性"
+        },
+        {
+          "id": "B",
+          "text": "不需要任何电源"
+        },
+        {
+          "id": "C",
+          "text": "输出可无限驱动负载"
+        },
+        {
+          "id": "D",
+          "text": "自动进行模数转换"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "施密特触发器具有不同的上升和下降阈值，形成迟滞区，避免输入在单一阈值附近受噪声影响反复翻转。",
+      "keyPoints": [
+        "迟滞由两个不同阈值构成",
+        "适合按键、慢边沿和受噪声干扰信号",
+        "不能替代必要的模拟滤波和去抖"
+      ],
+      "terminology": [
+        {
+          "englishName": "Schmitt Trigger",
+          "chineseName": "施密特触发器",
+          "role": "利用阈值迟滞把缓慢或含噪模拟边沿转换为稳定数字电平。"
+        }
+      ]
+    },
+    {
+      "id": "digital-006",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "CMOS 数字节点的动态功耗在一阶近似下与哪些量成正比？",
+      "options": [
+        {
+          "id": "A",
+          "text": "开关活动率、电容、电压平方和频率"
+        },
+        {
+          "id": "B",
+          "text": "只与直流电阻有关"
+        },
+        {
+          "id": "C",
+          "text": "只与封装尺寸有关"
+        },
+        {
+          "id": "D",
+          "text": "与电压和频率均无关"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "CMOS 动态功耗常近似为 P = αCV²f。降低电压最有效，因为功耗与电压平方相关，但还要满足时序和噪声裕量。",
+      "keyPoints": [
+        "α 表示开关活动率",
+        "负载电容每次翻转都要充放电",
+        "静态漏电功耗需另行计算"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "CMOS",
+          "englishName": "Complementary Metal-Oxide-Semiconductor",
+          "chineseName": "互补金属氧化物半导体",
+          "role": "利用互补晶体管实现低静态功耗数字逻辑，是现代集成电路的主要工艺结构。"
+        }
+      ]
+    },
+    {
+      "id": "device-003",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "infineon-fast-switching"
+      ],
+      "title": "硬开关 MOSFET 的主要开关损耗产生于哪个阶段？",
+      "options": [
+        {
+          "id": "A",
+          "text": "漏源电压与漏极电流在转换期间重叠"
+        },
+        {
+          "id": "B",
+          "text": "完全关断且电流为零时"
+        },
+        {
+          "id": "C",
+          "text": "稳态导通且电压为零时"
+        },
+        {
+          "id": "D",
+          "text": "器件未焊接时"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "硬开关转换期间 V_DS 与 I_D 同时为非零，瞬时功率的时间积分形成开关能量损耗。降低转换时间可减小损耗，但可能增加 EMI 与过冲。",
+      "keyPoints": [
+        "开通和关断都可能产生损耗",
+        "频率越高平均开关损耗越大",
+        "速度、损耗和 EMI 需要折中"
+      ],
+      "terminology": [
+        {
+          "englishName": "Hard Switching",
+          "chineseName": "硬开关",
+          "role": "器件在电压或电流未自然降为零时强制换相，结构简单但存在明显转换损耗。"
+        }
+      ]
+    },
+    {
+      "id": "device-004",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "硬开关半桥中，二极管反向恢复电荷 Qrr 主要会造成什么影响？",
+      "options": [
+        {
+          "id": "A",
+          "text": "换相时产生额外反向电流、损耗和 EMI"
+        },
+        {
+          "id": "B",
+          "text": "降低所有导通电阻为零"
+        },
+        {
+          "id": "C",
+          "text": "自动实现软启动"
+        },
+        {
+          "id": "D",
+          "text": "消除死区时间"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "二极管从正向导通转为反向截止时需要移除存储电荷，形成反向恢复电流，并增加对侧开关的开通损耗和电流应力。",
+      "keyPoints": [
+        "Qrr 与工作电流、温度和 di/dt 有关",
+        "反向恢复会激励寄生参数振铃",
+        "SiC 肖特基二极管通常恢复电荷更小"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Qrr",
+          "englishName": "Reverse-Recovery Charge",
+          "chineseName": "反向恢复电荷",
+          "role": "衡量二极管由导通转为截止时需要清除的存储电荷，影响换相损耗与尖峰。"
+        }
+      ]
+    },
+    {
+      "id": "device-005",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "infineon-fast-switching"
+      ],
+      "title": "MOSFET 在线性模式或热插拔应用中，除额定电压电流外还必须重点校核什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "安全工作区 SOA"
+        },
+        {
+          "id": "B",
+          "text": "丝印字体大小"
+        },
+        {
+          "id": "C",
+          "text": "数字输入阈值"
+        },
+        {
+          "id": "D",
+          "text": "晶振负载电容"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "器件同时承受较高 V_DS 和 I_D 时，局部热点与二次击穿风险可能先于总功耗限制出现。必须按脉冲宽度、温度和散热条件检查数据手册 SOA。",
+      "keyPoints": [
+        "额定电压与额定电流不能简单相乘使用",
+        "SOA 随脉冲时间和温度变化",
+        "线性工作能力因器件结构而异"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "SOA",
+          "englishName": "Safe Operating Area",
+          "chineseName": "安全工作区",
+          "role": "定义器件在指定时间和温度条件下可安全承受的电压电流组合。"
+        }
+      ]
+    },
+    {
+      "id": "device-006",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "器件耗散 2 W，结到环境热阻为 40 °C/W，环境 25 °C，忽略瞬态时结温约为多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "40 °C"
+        },
+        {
+          "id": "B",
+          "text": "65 °C"
+        },
+        {
+          "id": "C",
+          "text": "80 °C"
+        },
+        {
+          "id": "D",
+          "text": "105 °C"
+        }
+      ],
+      "correctOptionId": "D",
+      "explanation": "温升 ΔT = P × RθJA = 2 W × 40 °C/W = 80 °C，结温约为 25 + 80 = 105 °C。实际热阻取决于 PCB 铜面积、气流与安装方式。",
+      "keyPoints": [
+        "结温等于环境温度加温升",
+        "数据手册热阻有指定测试条件",
+        "需留出环境温度和参数误差裕量"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "RθJA",
+          "englishName": "Junction-to-Ambient Thermal Resistance",
+          "chineseName": "结到环境热阻",
+          "role": "描述稳态功耗从半导体结传到环境所产生温升的能力指标。"
+        }
+      ]
+    },
+    {
+      "id": "topology-003",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "理想连续导通 Boost 变换器将 12 V 升至 24 V，理论占空比约为多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "25%"
+        },
+        {
+          "id": "B",
+          "text": "50%"
+        },
+        {
+          "id": "C",
+          "text": "75%"
+        },
+        {
+          "id": "D",
+          "text": "100%"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "理想 Boost 变换比 V_OUT = V_IN/(1−D)，因此 D = 1−12/24 = 0.5。实际占空比还需补偿器件压降与损耗。",
+      "keyPoints": [
+        "Boost 用于升压",
+        "占空比接近 1 时应力和损耗显著增加",
+        "连续与断续模式的变换关系不同"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "Boost Converter",
+          "englishName": "Step-Up Converter",
+          "chineseName": "升压变换器",
+          "role": "利用电感储能和开关换相把较低直流电压转换为较高直流电压。"
+        }
+      ]
+    },
+    {
+      "id": "topology-004",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "ti-psds"
+      ],
+      "title": "Buck 变换器中，增大电感值且其他条件不变，电感电流纹波通常如何变化？",
+      "options": [
+        {
+          "id": "A",
+          "text": "减小"
+        },
+        {
+          "id": "B",
+          "text": "增大"
+        },
+        {
+          "id": "C",
+          "text": "完全不变"
+        },
+        {
+          "id": "D",
+          "text": "立即变为直流零电流"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "在给定输入、输出、占空比和频率下，电感纹波与 L 成反比。增大 L 可减小纹波，但会增加体积、成本并影响瞬态响应。",
+      "keyPoints": [
+        "纹波与开关频率也近似成反比",
+        "电感不能只按纹波选型",
+        "还需检查饱和电流、铜损和磁芯损耗"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "ΔI_L",
+          "englishName": "Inductor Current Ripple",
+          "chineseName": "电感电流纹波",
+          "role": "表示一个开关周期内电感电流的峰峰变化量，影响峰值应力和输出纹波。"
+        }
+      ]
+    },
+    {
+      "id": "topology-005",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "PWM 变换器从连续导通模式进入断续导通模式后，理想变换比通常还只由占空比决定吗？",
+      "options": [
+        {
+          "id": "A",
+          "text": "不是，还与负载、频率和电感等参数有关"
+        },
+        {
+          "id": "B",
+          "text": "是，任何条件下都只由占空比决定"
+        },
+        {
+          "id": "C",
+          "text": "只由环境温度决定"
+        },
+        {
+          "id": "D",
+          "text": "输出必然为零"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "断续模式中电感电流每周期降至零，新增零电流区间，稳态变换比会依赖负载和归一化电感参数，不再只有占空比。",
+      "keyPoints": [
+        "轻载时更容易进入 DCM",
+        "DCM 峰值电流和控制特性不同",
+        "模式边界需要单独计算"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "DCM",
+          "englishName": "Discontinuous Conduction Mode",
+          "chineseName": "断续导通模式",
+          "role": "电感电流在每个开关周期内存在降为零区间的工作模式。"
+        }
+      ]
+    },
+    {
+      "id": "topology-006",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "ti-psds"
+      ],
+      "title": "低压大电流 Buck 中使用同步整流 MOSFET 替代二极管的主要收益是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "用较低的 I²R 损耗替代二极管正向压降损耗"
+        },
+        {
+          "id": "B",
+          "text": "自动提供输入输出隔离"
+        },
+        {
+          "id": "C",
+          "text": "无需驱动时序"
+        },
+        {
+          "id": "D",
+          "text": "让电感可以删除"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "低压大电流时，二极管的固定正向压降造成显著损耗。同步 MOSFET 导通压降约为 I×R_DS(on)，可提高效率，但必须管理死区和反向电流。",
+      "keyPoints": [
+        "驱动时序必须防止上下管直通",
+        "死区过长会增加体二极管导通损耗",
+        "轻载下可能需要二极管模拟模式"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "SR",
+          "englishName": "Synchronous Rectification",
+          "chineseName": "同步整流",
+          "role": "用受控功率开关代替整流二极管，以降低低压大电流应用中的导通损耗。"
+        }
+      ]
+    },
+    {
+      "id": "control-002",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "ti-psds"
+      ],
+      "title": "开关电源环路交越频率为什么通常要显著低于开关频率？",
+      "options": [
+        {
+          "id": "A",
+          "text": "避免采样、PWM 延迟和开关纹波破坏连续时间模型与稳定裕量"
+        },
+        {
+          "id": "B",
+          "text": "因为输出电压必须低于输入电压"
+        },
+        {
+          "id": "C",
+          "text": "为了使电感饱和"
+        },
+        {
+          "id": "D",
+          "text": "为了提高二极管压降"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "当环路带宽接近开关频率时，PWM 调制、采样保持、计算延迟与高频极点会引入额外相位滞后。工程上常以开关频率的一小部分作为带宽上限起点。",
+      "keyPoints": [
+        "具体比例取决于拓扑与控制方式",
+        "带宽还受右半平面零点限制",
+        "最终需用环路测量验证"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "f_C",
+          "englishName": "Loop Crossover Frequency",
+          "chineseName": "环路交越频率",
+          "role": "环路增益幅值穿越 0 dB 的频率，近似反映闭环响应速度。"
+        }
+      ]
+    },
+    {
+      "id": "control-003",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "ti-psds"
+      ],
+      "title": "Type II 补偿器中的零点通常用于什么目的？",
+      "options": [
+        {
+          "id": "A",
+          "text": "提供相位提升并补偿功率级极点影响"
+        },
+        {
+          "id": "B",
+          "text": "把直流增益强制变为零"
+        },
+        {
+          "id": "C",
+          "text": "直接改变 MOSFET 额定电压"
+        },
+        {
+          "id": "D",
+          "text": "生成隔离电源"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Type II 补偿器通常包含积分作用、一个零点和一个高频极点。零点可抵消或减弱功率级极点附近的相位下降，提高交越处相位裕度。",
+      "keyPoints": [
+        "积分器提高低频增益和稳态精度",
+        "高频极点用于滚降噪声",
+        "零极点位置需结合功率级模型"
+      ],
+      "terminology": [
+        {
+          "englishName": "Type II Compensator",
+          "chineseName": "二型补偿器",
+          "role": "通过积分、零点和高频极点整形环路增益，常用于电源电压模式或电流模式控制。"
+        }
+      ]
+    },
+    {
+      "id": "control-004",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "负载电流突然增加的最初瞬间，输出电容 ESR 通常造成什么现象？",
+      "options": [
+        {
+          "id": "A",
+          "text": "输出电压出现近似 ΔI×ESR 的瞬时下跳"
+        },
+        {
+          "id": "B",
+          "text": "输出电压立即无限升高"
+        },
+        {
+          "id": "C",
+          "text": "开关频率变为零"
+        },
+        {
+          "id": "D",
+          "text": "输入保险丝必然熔断"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "控制环路和电感电流尚未来得及响应时，负载阶跃主要由输出电容提供。电流突变流过 ESR 会产生即时电压阶跃，随后才出现由电容放电形成的斜率。",
+      "keyPoints": [
+        "ESR 影响瞬态阶跃",
+        "电容值影响后续电压斜率",
+        "环路带宽决定恢复过程"
+      ],
+      "terminology": [
+        {
+          "englishName": "Load Transient Response",
+          "chineseName": "负载瞬态响应",
+          "role": "描述电源在负载快速变化时输出偏差、恢复时间和稳定性的动态性能。"
+        }
+      ]
+    },
+    {
+      "id": "control-005",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "fundamentals-power"
+      ],
+      "title": "连续导通 Boost 变换器的右半平面零点为什么会限制环路带宽？",
+      "options": [
+        {
+          "id": "A",
+          "text": "它增加幅值斜率却引入相位滞后，形成非最小相位特性"
+        },
+        {
+          "id": "B",
+          "text": "它同时增加幅值和相位裕度"
+        },
+        {
+          "id": "C",
+          "text": "它只影响直流铜损"
+        },
+        {
+          "id": "D",
+          "text": "它使输出与输入完全隔离"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "Boost 增大占空比时，短时间内输出侧二极管导通时间反而减少，输出先朝相反方向变化。该非最小相位行为表现为右半平面零点，交越频率应远低于它。",
+      "keyPoints": [
+        "RHP 零点不能用稳定补偿零点直接抵消",
+        "其频率随负载和工作点变化",
+        "提高带宽需检查最差工况"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "RHPZ",
+          "englishName": "Right-Half-Plane Zero",
+          "chineseName": "右半平面零点",
+          "role": "产生增益上升但相位下降的非最小相位特性，限制闭环可实现带宽。"
+        }
+      ]
+    },
+    {
+      "id": "control-006",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "ti-psds"
+      ],
+      "title": "使用频率响应分析仪测量电源环路时，小信号注入点应满足什么条件？",
+      "options": [
+        {
+          "id": "A",
+          "text": "位于环路中低阻抗驱动高阻抗的位置，并保持直流工作点"
+        },
+        {
+          "id": "B",
+          "text": "任意断开功率回路"
+        },
+        {
+          "id": "C",
+          "text": "直接跨接输入保险丝"
+        },
+        {
+          "id": "D",
+          "text": "使注入幅度大到进入限流"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "常在反馈环路中串入小电阻，并在低输出阻抗驱动高输入阻抗处注入小交流信号，使环路保持闭合且工作在线性小信号区域。",
+      "keyPoints": [
+        "注入幅度过大会得到非线性结果",
+        "测试时需覆盖多个负载和输入工况",
+        "测量连接必须满足安全隔离要求"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "FRA",
+          "englishName": "Frequency Response Analyzer",
+          "chineseName": "频率响应分析仪",
+          "role": "向闭环系统注入扫频小信号并测量增益与相位，用于验证稳定裕度。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-003",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "emc-engineering"
+      ],
+      "title": "高速数字信号跨越参考平面分割缝隙时，最主要的问题是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "回流电流被迫绕行，增大环路面积与 EMI"
+        },
+        {
+          "id": "B",
+          "text": "直流逻辑电平一定翻倍"
+        },
+        {
+          "id": "C",
+          "text": "铜阻自动变为零"
+        },
+        {
+          "id": "D",
+          "text": "时钟频率自动降低"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "高频回流倾向沿信号走线下方的参考平面流动。跨越分割会切断最短回流路径，迫使电流绕行，增加环路电感、串扰和辐射。",
+      "keyPoints": [
+        "高速信号应保持连续参考平面",
+        "关注回流路径而不仅是信号线",
+        "不得已换层时应提供邻近回流过孔"
+      ],
+      "terminology": [
+        {
+          "englishName": "Return Current Path",
+          "chineseName": "回流电流路径",
+          "role": "为信号电流提供闭合回路，其连续性决定环路面积、阻抗和辐射水平。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-004",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "emc-engineering"
+      ],
+      "title": "高速信号换层时，在信号过孔附近增加接地过孔的主要作用是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "为高频回流提供短路径，减小换层环路面积"
+        },
+        {
+          "id": "B",
+          "text": "增加信号直流电压"
+        },
+        {
+          "id": "C",
+          "text": "代替全部去耦电容"
+        },
+        {
+          "id": "D",
+          "text": "让阻抗不再受层叠影响"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "信号从一个参考平面环境换到另一个环境时，邻近接地过孔让回流电流也能就近换层，避免通过远处路径绕行。",
+      "keyPoints": [
+        "回流过孔应靠近信号过孔",
+        "参考平面变化可能还需跨接电容",
+        "过孔本身也具有寄生电感"
+      ],
+      "terminology": [
+        {
+          "englishName": "Stitching Via",
+          "chineseName": "缝合过孔",
+          "role": "连接不同层的参考平面，为高频回流或屏蔽电流提供低电感通路。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-005",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "advanced",
+      "sourceIds": [
+        "emc-engineering"
+      ],
+      "title": "线缆上的共模电流为什么常成为强辐射源？",
+      "options": [
+        {
+          "id": "A",
+          "text": "同方向电流不能在紧邻导体中相互抵消，线缆可形成有效天线"
+        },
+        {
+          "id": "B",
+          "text": "共模电流永远等于零"
+        },
+        {
+          "id": "C",
+          "text": "它只存在于直流电路"
+        },
+        {
+          "id": "D",
+          "text": "它会降低线缆长度为零"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "差模电流在相邻导体中方向相反，远场部分抵消；共模电流同向流动并经杂散路径返回，使整段线缆具备较大的有效辐射结构。",
+      "keyPoints": [
+        "很小的共模电流也可能产生明显辐射",
+        "不平衡换相会把差模转换为共模",
+        "共模扼流圈需结合源与回路处理"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "CM",
+          "englishName": "Common-Mode Current",
+          "chineseName": "共模电流",
+          "role": "在多根导体上同方向流动并经环境或寄生路径返回的电流，是传导与辐射 EMI 的重要来源。"
+        }
+      ]
+    },
+    {
+      "id": "pcb-006",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "adi-mt031"
+      ],
+      "title": "测量大电流分流电阻的毫伏压降时，为什么推荐开尔文连接？",
+      "options": [
+        {
+          "id": "A",
+          "text": "把载流路径压降与测量引线分离，降低铜箔和焊点电阻误差"
+        },
+        {
+          "id": "B",
+          "text": "让分流电阻不再发热"
+        },
+        {
+          "id": "C",
+          "text": "自动隔离所有高压"
+        },
+        {
+          "id": "D",
+          "text": "消除 ADC 量化误差"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "四线制连接使用独立载流端与高阻测量端，使测量引线几乎不承载负载电流，从而避免大电流在铜箔、焊点和端子上的压降被计入。",
+      "keyPoints": [
+        "采样线从电阻端子内侧引出",
+        "差分采样线应成对并远离开关节点",
+        "开尔文连接不能替代共模范围检查"
+      ],
+      "terminology": [
+        {
+          "englishName": "Kelvin Connection",
+          "chineseName": "开尔文连接（四线制连接）",
+          "role": "分离载流与电压采样路径，提高低阻值或小压降测量精度。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-003",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "basic",
+      "sourceIds": [
+        "nxp-i2c"
+      ],
+      "title": "I²C 每传输 8 位数据后，第 9 个时钟脉冲通常用于什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "接收方发送 ACK 或 NACK"
+        },
+        {
+          "id": "B",
+          "text": "传输两个停止位"
+        },
+        {
+          "id": "C",
+          "text": "提高电源电压"
+        },
+        {
+          "id": "D",
+          "text": "切换到 SPI 模式"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "每个字节后，发送方释放 SDA，接收方在第 9 个时钟期间拉低 SDA 表示 ACK，保持高电平表示 NACK。",
+      "keyPoints": [
+        "ACK 为低电平",
+        "NACK 可表示结束读取或未应答",
+        "应答位也遵守建立与保持时间"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "ACK/NACK",
+          "englishName": "Acknowledge / Not Acknowledge",
+          "chineseName": "应答／非应答",
+          "role": "由接收方反馈字节是否被接受，用于协调 I²C 事务流程。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-004",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "foundations-ad"
+      ],
+      "title": "标准四线 SPI 相较 I²C 的典型特点是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "使用独立发送和接收线，可全双工传输，但通常需要片选线"
+        },
+        {
+          "id": "B",
+          "text": "只需要一根信号线"
+        },
+        {
+          "id": "C",
+          "text": "所有器件都通过地址自动仲裁"
+        },
+        {
+          "id": "D",
+          "text": "必须使用开漏上拉结构"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "SPI 常使用 SCLK、MOSI、MISO 和片选信号。独立数据方向支持全双工和较高吞吐率，但多从设备时通常需要额外片选资源。",
+      "keyPoints": [
+        "SPI 没有统一的设备地址阶段",
+        "时钟极性和相位必须匹配",
+        "协议层帧格式由具体器件定义"
+      ],
+      "terminology": [
+        {
+          "abbreviation": "SPI",
+          "englishName": "Serial Peripheral Interface",
+          "chineseName": "串行外设接口",
+          "role": "使用同步时钟和独立收发数据线连接控制器与外设，适合较高速板级通信。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-005",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "tektronix-probes"
+      ],
+      "title": "示波器系统带宽不足时，测得快速边沿的上升时间通常会怎样？",
+      "options": [
+        {
+          "id": "A",
+          "text": "变长，看起来比真实边沿更慢"
+        },
+        {
+          "id": "B",
+          "text": "自动变为零"
+        },
+        {
+          "id": "C",
+          "text": "始终与真实值完全相同"
+        },
+        {
+          "id": "D",
+          "text": "只改变直流平均值"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "示波器与探头构成有限带宽系统，会滤除快速边沿的高频分量，使测得上升时间增加。单极点近似下系统上升时间约为 0.35/BW。",
+      "keyPoints": [
+        "总带宽由示波器和探头共同决定",
+        "测量系统上升时间会与被测信号合成",
+        "通常需要留出足够带宽裕量"
+      ],
+      "terminology": [
+        {
+          "englishName": "Measurement Bandwidth",
+          "chineseName": "测量带宽",
+          "role": "表示测量系统能够在规定幅度误差内通过的频率范围，决定快速信号保真度。"
+        }
+      ]
+    },
+    {
+      "id": "embedded-006",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "intermediate",
+      "sourceIds": [
+        "tektronix-probes"
+      ],
+      "title": "测量高速开关节点时，用短接地弹簧代替长鳄鱼夹地线的主要原因是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "减小接地回路电感和拾取面积，降低虚假振铃"
+        },
+        {
+          "id": "B",
+          "text": "增加探头衰减比"
+        },
+        {
+          "id": "C",
+          "text": "提高被测电路直流功率"
+        },
+        {
+          "id": "D",
+          "text": "让示波器与保护地断开"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "长地线具有显著寄生电感，并与探头输入电容形成谐振回路，还会像环形天线拾取磁场。短接地弹簧可大幅缩小环路。",
+      "keyPoints": [
+        "探头连接方式本身会改变波形",
+        "优先使用最短的探头尖端与回流连接",
+        "高压节点仍应使用合适的差分探头"
+      ],
+      "terminology": [
+        {
+          "englishName": "Ground Spring",
+          "chineseName": "探头接地弹簧",
+          "role": "为无源探头提供极短回流路径，降低寄生电感并改善高速波形测量。"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "mit-6002",
+      "title": "6.002 Circuits and Electronics",
+      "organization": "MIT OpenCourseWare",
+      "type": "course",
+      "url": "https://www.ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/"
+    },
+    {
+      "id": "foundations-ad",
+      "title": "Foundations of Analog and Digital Electronic Circuits",
+      "organization": "Anant Agarwal / Jeffrey H. Lang",
+      "type": "book"
+    },
+    {
+      "id": "microelectronic-circuits",
+      "title": "Microelectronic Circuits",
+      "organization": "Adel S. Sedra / Kenneth C. Smith",
+      "type": "book"
+    },
+    {
+      "id": "ti-precision-labs",
+      "title": "TI Precision Labs - Amplifiers",
+      "organization": "Texas Instruments",
+      "type": "course",
+      "url": "https://www.ti.com/en-us/design-development/educational-resources/video/series/precision-labs"
+    },
+    {
+      "id": "fundamentals-power",
+      "title": "Fundamentals of Power Electronics",
+      "organization": "Robert W. Erickson / Dragan Maksimović",
+      "type": "book"
+    },
+    {
+      "id": "ti-psds",
+      "title": "Power Supply Design Seminar Library",
+      "organization": "Texas Instruments",
+      "type": "course",
+      "url": "https://www.ti.com/en-us/about-ti/events/power-supply-design-seminar/psds-library"
+    },
+    {
+      "id": "infineon-fast-switching",
+      "title": "MOSFET Fast Switching: Motivation, Implementation and Precautions",
+      "organization": "Infineon Technologies",
+      "type": "application-note",
+      "url": "https://www.infineon.com/assets/row/public/documents/24/42/infineon-applicationnote-mosfet-fast-switching-motivation--implementation-and-precautions-applicationnotes-en.pdf"
+    },
+    {
+      "id": "intel-metastability",
+      "title": "Managing Metastability with Quartus Prime",
+      "organization": "Altera / Intel",
+      "type": "application-note",
+      "url": "https://docs.altera.com/r/docs/683323/18.1/intel-quartus-prime-standard-edition-user-guide-design-recommendations/managing-metastability-with-the-intel-quartus-prime-software"
+    },
+    {
+      "id": "nxp-i2c",
+      "title": "UM10204 I²C-bus Specification and User Manual",
+      "organization": "NXP Semiconductors",
+      "type": "standard",
+      "url": "https://community.nxp.com/pwmxy87654/attachments/pwmxy87654/other/18306/1/UM10204_I2CSpec.pdf?inline=true"
+    },
+    {
+      "id": "adi-mt031",
+      "title": "MT-031 Grounding Data Converters and Solving the Mystery of AGND and DGND",
+      "organization": "Analog Devices",
+      "type": "application-note",
+      "url": "https://www.analog.com/media/en/training-seminars/tutorials/MT-031.pdf"
+    },
+    {
+      "id": "tektronix-probes",
+      "title": "ABCs of Probes Primer",
+      "organization": "Tektronix",
+      "type": "course",
+      "url": "https://www.tek.com/en/documents/whitepaper/abcs-probes-primer"
+    },
+    {
+      "id": "emc-engineering",
+      "title": "Electromagnetic Compatibility Engineering",
+      "organization": "Henry W. Ott",
+      "type": "book"
+    }
+  ]
+}
