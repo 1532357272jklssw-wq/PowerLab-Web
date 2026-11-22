@@ -147,6 +147,7 @@
     main.innerHTML = `<section class="hero"><div class="hero-kicker">POWER &amp; HARDWARE INTERVIEW LAB · V${escapeHtml(state.pack.bankVersion)}</div>
       <h1>把硬件知识练成工程判断力</h1><p class="hero-copy">覆盖电路、电源、控制、PCB 与调试。每道题都有工程化解析、专业术语和参考来源。</p>
       <div class="hero-meta"><span class="pill">${escapeHtml(state.packOrigin)} · 离线可用</span><span class="pill">${state.pack.sources.length} 个参考来源</span></div>
+      <button id="startRandom" class="primary-action random-action" type="button">随机练习 · ${Math.min(20, total.total)} 题</button>
       <div class="hero-stats"><div class="hero-stat"><strong>${categories.length}</strong><span>知识分类</span></div><div class="hero-stat"><strong>${total.total}</strong><span>专业题目</span></div><div class="hero-stat"><strong>${total.answered}</strong><span>已完成</span></div></div></section>
       <div class="section-head"><div><h2>选择一个方向</h2><p>从基础原理到工程实践</p></div><span class="summary">完成度 ${total.completion}%</span></div>
       <section class="category-grid">${cards}</section><aside class="notice"><strong>工程安全提示：</strong>涉及市电、高压和功率实验时，请遵守实验室安全规范。题库不能替代数据手册与安全评审。</aside>`
@@ -174,6 +175,21 @@
     const questions = categoryQuestions(categoryId)
     if (!questions.length) return showToast('该分类暂无题目')
     state.practice = { questions, index:0, selected:'', submitted:false, returnView:state.view }
+    renderPractice()
+    window.scrollTo(0,0)
+  }
+
+  function startRandom() {
+    const questions = state.pack.questions.slice()
+    const count = Math.min(20, questions.length)
+    for (let index = 0; index < count; index += 1) {
+      const pick = index + Math.floor(Math.random() * (questions.length - index))
+      const previous = questions[index]
+      questions[index] = questions[pick]
+      questions[pick] = previous
+    }
+    if (!count) return showToast('题库暂无题目')
+    state.practice = { questions:questions.slice(0, count), index:0, selected:'', submitted:false, returnView:state.view }
     renderPractice()
     window.scrollTo(0,0)
   }
@@ -271,6 +287,7 @@
   function bindEvents() {
     document.querySelector('.bottom-nav').addEventListener('click', (event) => { const button=event.target.closest('button[data-view]'); if(button) setView(button.dataset.view) })
     main.addEventListener('click', (event) => {
+      if (event.target.closest('#startRandom')) return startRandom()
       const category = event.target.closest('[data-category]'); if(category) return startCategory(category.dataset.category)
       const mistake = event.target.closest('[data-question]'); if(mistake) return startQuestion(mistake.dataset.question)
       const option = event.target.closest('[data-option]'); if(option && state.practice && !state.practice.submitted) { state.practice.selected=option.dataset.option; return renderPractice() }

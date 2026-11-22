@@ -1,5 +1,5 @@
-const CACHE_NAME = 'powerlab-shell-v4'
-const SHELL = ['./','index.html','app.css?v=3','app.js?v=3','manifest.webmanifest','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','data/question-bank.json']
+const CACHE_NAME = 'powerlab-shell-v5'
+const SHELL = ['./','index.html','app.css?v=4','app.js?v=4','manifest.webmanifest','assets/icon.svg','assets/icon-192.png','assets/icon-512.png','data/question-bank.json']
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(SHELL)).then(() => self.skipWaiting()))
