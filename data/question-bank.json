@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "bankVersion": "2.0.0",
-  "generatedAt": "2026-11-18T15:01:51.490Z",
+  "bankVersion": "2.0.1",
+  "generatedAt": "2026-11-22T12:19:23.576Z",
   "questions": [
     {
       "id": "circuit-001",
@@ -2053,6 +2053,870 @@
           "chineseName": "探头接地弹簧",
           "role": "为无源探头提供极短回流路径，降低寄生电感并改善高速波形测量。"
         }
+      ]
+    },
+    {
+      "id": "eng-201-1",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "10 V 电源仅通过 2 kΩ 电阻给 100 nF 电容充电，初始电压为零。一个时间常数后电容电压约多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "6.32 V"
+        },
+        {
+          "id": "B",
+          "text": "3.68 V"
+        },
+        {
+          "id": "C",
+          "text": "10 V"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "τ=RC=200 μs，充电公式为 10(1−e^(−t/τ))，在 t=τ 时达到终值约 63.2%。",
+      "keyPoints": [
+        "描述一阶电路响应速度。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Time Constant",
+          "chineseName": "时间常数",
+          "role": "描述一阶电路响应速度。"
+        }
+      ],
+      "sourceIds": [
+        "mit-6002"
+      ]
+    },
+    {
+      "id": "eng-201-2",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "5 V 理想电源经两个 10 kΩ 电阻分压，下臂并联 10 kΩ 负载。输出电压是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "2.50 V"
+        },
+        {
+          "id": "B",
+          "text": "1.67 V"
+        },
+        {
+          "id": "C",
+          "text": "3.33 V"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "下臂等效为 5 kΩ，输出为 5×5/(10+5) V。",
+      "keyPoints": [
+        "说明有限输入阻抗如何改变被测节点电压。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Loading Effect",
+          "chineseName": "负载效应",
+          "role": "说明有限输入阻抗如何改变被测节点电压。"
+        }
+      ],
+      "sourceIds": [
+        "mit-6002"
+      ]
+    },
+    {
+      "id": "eng-201-3",
+      "categoryId": "circuit-basics",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "10 Ω 电阻流过 2 A RMS 正弦电流，其平均耗散是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "20 W"
+        },
+        {
+          "id": "B",
+          "text": "80 W"
+        },
+        {
+          "id": "C",
+          "text": "40 W"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "平均功率为 I_RMS²R，2 A 已经是有效值，不再除以 √2。",
+      "keyPoints": [
+        "用等效发热能力度量周期信号。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Root Mean Square",
+          "chineseName": "均方根",
+          "role": "用等效发热能力度量周期信号。"
+        }
+      ],
+      "sourceIds": [
+        "mit-6002"
+      ]
+    },
+    {
+      "id": "eng-201-4",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "缓冲器要输出峰值 2 V、100 kHz 的正弦波，理论最低压摆率约多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.26 V/μs"
+        },
+        {
+          "id": "B",
+          "text": "0.20 V/μs"
+        },
+        {
+          "id": "C",
+          "text": "0.63 V/μs"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "最大斜率为 2πfV_peak，约 1.26 V/μs。设计还要留余量并校核带宽。",
+      "keyPoints": [
+        "限制放大器输出变化速度。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Slew Rate",
+          "chineseName": "压摆率",
+          "role": "限制放大器输出变化速度。"
+        }
+      ],
+      "sourceIds": [
+        "ti-precision-labs"
+      ]
+    },
+    {
+      "id": "eng-201-5",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "理想反相放大器输入电阻 10 kΩ、反馈电阻 47 kΩ，闭环增益是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "+4.7"
+        },
+        {
+          "id": "B",
+          "text": "−4.7"
+        },
+        {
+          "id": "C",
+          "text": "+5.7"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "虚地条件下输入电流流经反馈电阻，增益为 −R_f/R_in。",
+      "keyPoints": [
+        "用输出误差约束闭环增益。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Negative Feedback",
+          "chineseName": "负反馈",
+          "role": "用输出误差约束闭环增益。"
+        }
+      ],
+      "sourceIds": [
+        "microelectronic-circuits"
+      ]
+    },
+    {
+      "id": "eng-201-6",
+      "categoryId": "analog-electronics",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "运放标称轨到轨输出，能否默认其在所有负载下都能精确到达电源轨？",
+      "options": [
+        {
+          "id": "A",
+          "text": "能，与负载无关"
+        },
+        {
+          "id": "B",
+          "text": "仅需查输入失调"
+        },
+        {
+          "id": "C",
+          "text": "不能，应查给定负载下的输出摆幅"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "输出级的压降与输出电流有关。应查数据手册不同负载和温度下的摆幅，并单独检查输入共模范围。",
+      "keyPoints": [
+        "描述指定供电和负载下输出能达到的电压范围。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Output Voltage Swing",
+          "chineseName": "输出电压摆幅",
+          "role": "描述指定供电和负载下输出能达到的电压范围。"
+        }
+      ],
+      "sourceIds": [
+        "ti-precision-labs"
+      ]
+    },
+    {
+      "id": "eng-201-7",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "用两级触发器同步异步输入，是否能保证捕获短于目的时钟周期的脉冲？",
+      "options": [
+        {
+          "id": "A",
+          "text": "不能，可能完全错过采样沿"
+        },
+        {
+          "id": "B",
+          "text": "能，第二级会自动展宽"
+        },
+        {
+          "id": "C",
+          "text": "能，只要两个触发器是同一型号"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "两级同步器降低亚稳态传播概率，但短脉冲可能没被采到；可按事件频率采用握手、展宽或翻转同步。",
+      "keyPoints": [
+        "处理信号在不同时钟域间传输。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Clock Domain Crossing",
+          "chineseName": "跨时钟域",
+          "role": "处理信号在不同时钟域间传输。"
+        }
+      ],
+      "sourceIds": [
+        "intel-metastability"
+      ]
+    },
+    {
+      "id": "eng-201-8",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "同一时钟域内组合路径最大延迟过大，优先检查哪类时序约束？",
+      "options": [
+        {
+          "id": "A",
+          "text": "保持时间"
+        },
+        {
+          "id": "B",
+          "text": "建立时间"
+        },
+        {
+          "id": "C",
+          "text": "输入阈值"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "建立检查关注数据最迟何时到达。保持检查关注最早到达，降低时钟频率通常不能修复保持违例。",
+      "keyPoints": [
+        "规定数据在采样沿之前须稳定的最短时间。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Setup Time",
+          "chineseName": "建立时间",
+          "role": "规定数据在采样沿之前须稳定的最短时间。"
+        }
+      ],
+      "sourceIds": [
+        "foundations-ad"
+      ]
+    },
+    {
+      "id": "eng-201-9",
+      "categoryId": "digital-electronics",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "开漏输出连到上拉电阻，晶体管关断时谁负责提供高电平？",
+      "options": [
+        {
+          "id": "A",
+          "text": "开漏晶体管主动推高"
+        },
+        {
+          "id": "B",
+          "text": "输入保护二极管"
+        },
+        {
+          "id": "C",
+          "text": "外部上拉"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "开漏晶体管导通时拉低，关断时呈高阻，上拉建立高电平。",
+      "keyPoints": [
+        "允许多个兼容输出共享一根带上拉的信号线。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Open Drain",
+          "chineseName": "开漏输出",
+          "role": "允许多个兼容输出共享一根带上拉的信号线。"
+        }
+      ],
+      "sourceIds": [
+        "foundations-ad"
+      ]
+    },
+    {
+      "id": "eng-201-10",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "半桥中关断管在另一管开通瞬间出现栅压尖峰，优先排查什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "漏栅电容耦合和栅极关断回路阻抗"
+        },
+        {
+          "id": "B",
+          "text": "输出电容容差"
+        },
+        {
+          "id": "C",
+          "text": "控制器直流参考误差"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "开关节点的高 dv/dt 可通过漏栅电容注入电流。减小关断路径阻抗、优化布局或使用米勒钳位可缓解。",
+      "keyPoints": [
+        "在关断期间为耦合电流提供低阻通路。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Miller Clamp",
+          "chineseName": "米勒钳位",
+          "role": "在关断期间为耦合电流提供低阻通路。"
+        }
+      ],
+      "sourceIds": [
+        "infineon-fast-switching"
+      ]
+    },
+    {
+      "id": "eng-201-11",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "一只 MOSFET 总耗散 2 W，实测壳温 80 ℃，采用 2 ℃/W 的结壳热阻粗估，结温约多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "81 ℃"
+        },
+        {
+          "id": "B",
+          "text": "84 ℃"
+        },
+        {
+          "id": "C",
+          "text": "120 ℃"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "在稳态且主要热流经过定义的壳体路径时，Tj≈Tc+P×RθJC。实际要确认测点和热路径。",
+      "keyPoints": [
+        "估算经过指定热路径时的结壳温差。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Junction-to-Case Thermal Resistance",
+          "chineseName": "结到壳热阻",
+          "role": "估算经过指定热路径时的结壳温差。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-12",
+      "categoryId": "power-devices",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "估算 MOSFET 驱动供电功率时，Q_g=40 nC、驱动 10 V、频率 250 kHz，单管约消耗多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "1.0 W"
+        },
+        {
+          "id": "B",
+          "text": "0.01 W"
+        },
+        {
+          "id": "C",
+          "text": "0.10 W"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "单极性驱动的平均充电功率近似为 Q_g×V_drive×f。Q_g 应取对应工作条件的数据。",
+      "keyPoints": [
+        "估算驱动所需电荷和平均驱动功耗。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Total Gate Charge",
+          "chineseName": "总栅极电荷",
+          "role": "估算驱动所需电荷和平均驱动功耗。"
+        }
+      ],
+      "sourceIds": [
+        "infineon-fast-switching"
+      ]
+    },
+    {
+      "id": "eng-201-13",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "理想 Buck 在连续导通模式下，12 V 转 3 V 的稳态占空比是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "25%"
+        },
+        {
+          "id": "B",
+          "text": "33%"
+        },
+        {
+          "id": "C",
+          "text": "75%"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "电感伏秒平衡给出 Vout=D×Vin。实际占空比受器件压降和死区等影响。",
+      "keyPoints": [
+        "表示每个周期内电感电流不降到零。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Continuous Conduction Mode",
+          "chineseName": "连续导通模式",
+          "role": "表示每个周期内电感电流不降到零。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-14",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "理想 Buck 在 12 V 输入、6 V 输出、10 μH 和 500 kHz 下，连续导通时电感纹波峰峰值约多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.3 A"
+        },
+        {
+          "id": "B",
+          "text": "0.6 A"
+        },
+        {
+          "id": "C",
+          "text": "1.2 A"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "D≈0.5，导通时间约 1 μs。ΔI_L=(12−6)×1 μs/10 μH=0.6 A。",
+      "keyPoints": [
+        "用于核算电感峰值电流和输出纹波。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Inductor Ripple Current",
+          "chineseName": "电感纹波电流",
+          "role": "用于核算电感峰值电流和输出纹波。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-15",
+      "categoryId": "power-topologies",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "理想非同步 Boost 停止开关后，输入是否与输出断开？",
+      "options": [
+        {
+          "id": "A",
+          "text": "完全断开"
+        },
+        {
+          "id": "B",
+          "text": "只剩寄生电容相连"
+        },
+        {
+          "id": "C",
+          "text": "没有，输入仍可经电感和二极管向输出供电"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "传统 Boost 有输入到输出的直流路径。若要求彻底断开，需额外的断开器件或不同拓扑。",
+      "keyPoints": [
+        "实现停机时切断输入向负载的通路。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Load Disconnect",
+          "chineseName": "负载断开",
+          "role": "实现停机时切断输入向负载的通路。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-16",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "按标准负反馈环路增益定义，0 dB 交越处相位为 −135°。相位裕量是多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "45°"
+        },
+        {
+          "id": "B",
+          "text": "135°"
+        },
+        {
+          "id": "C",
+          "text": "−45°"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "相位裕量是单位增益交越处距离 −180° 的相位差。多重交越时还需进一步分析。",
+      "keyPoints": [
+        "衡量单位增益交越处距离临界相位的余量。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Phase Margin",
+          "chineseName": "相位裕量",
+          "role": "衡量单位增益交越处距离临界相位的余量。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-17",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "连续导通 Boost 的右半平面零点进入环路带宽附近，通常如何处理？",
+      "options": [
+        {
+          "id": "A",
+          "text": "把交越频率提高到远高于零点"
+        },
+        {
+          "id": "B",
+          "text": "让交越频率明显低于最不利工况下的零点频率"
+        },
+        {
+          "id": "C",
+          "text": "用普通左半平面补偿零点直接抵消"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "占空比增加时，二极管向输出输送能量的时间先缩短，造成逆向初始响应和额外相位滞后。",
+      "keyPoints": [
+        "限制 Boost 等拓扑可实现的闭环带宽。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Right-Half-Plane Zero",
+          "chineseName": "右半平面零点",
+          "role": "限制 Boost 等拓扑可实现的闭环带宽。"
+        }
+      ],
+      "sourceIds": [
+        "fundamentals-power"
+      ]
+    },
+    {
+      "id": "eng-201-18",
+      "categoryId": "control-loop",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "数字电源从采样到更新占空比有 10 μs 固定延迟，在 10 kHz 处引入约多少相位滞后？",
+      "options": [
+        {
+          "id": "A",
+          "text": "3.6°"
+        },
+        {
+          "id": "B",
+          "text": "90°"
+        },
+        {
+          "id": "C",
+          "text": "36°"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "纯延迟的相位为 −360°×f×T，此处 fT=0.1。另需计算滤波和功率级的相位。",
+      "keyPoints": [
+        "随频率增加引入相位滞后。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Transport Delay",
+          "chineseName": "传输延迟",
+          "role": "随频率增加引入相位滞后。"
+        }
+      ],
+      "sourceIds": [
+        "ti-psds"
+      ]
+    },
+    {
+      "id": "eng-201-19",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "高速信号跨过参考地平面开槽，主要风险是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "回流绕行导致回路面积变大"
+        },
+        {
+          "id": "B",
+          "text": "回流沿最短距离跨过空气"
+        },
+        {
+          "id": "C",
+          "text": "地平面会屏蔽所有辐射"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "高频回流趋向靠近信号路径，跨槽迫使回流绕行，增加耦合和辐射。",
+      "keyPoints": [
+        "决定信号电流闭合路径及其回路面积。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Return Current Path",
+          "chineseName": "回流路径",
+          "role": "决定信号电流闭合路径及其回路面积。"
+        }
+      ],
+      "sourceIds": [
+        "emc-engineering"
+      ]
+    },
+    {
+      "id": "eng-201-20",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "为芯片放置高频去耦电容，首要的布局目标是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "将电容放到板边"
+        },
+        {
+          "id": "B",
+          "text": "缩小电源脚、电容和地之间的回路"
+        },
+        {
+          "id": "C",
+          "text": "增加到地的走线长度"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "高频下走线和过孔的电感会削弱去耦。应靠近引脚并缩短供电与返回路径。",
+      "keyPoints": [
+        "就近提供瞬态电流并降低电源噪声。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Decoupling Capacitor",
+          "chineseName": "去耦电容",
+          "role": "就近提供瞬态电流并降低电源噪声。"
+        }
+      ],
+      "sourceIds": [
+        "adi-mt031"
+      ]
+    },
+    {
+      "id": "eng-201-21",
+      "categoryId": "pcb-emc",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "同步 Buck 出现与开关沿同步的辐射峰，优先缩小哪段高 di/dt 回路？",
+      "options": [
+        {
+          "id": "A",
+          "text": "输出端低速采样线"
+        },
+        {
+          "id": "B",
+          "text": "指示灯限流回路"
+        },
+        {
+          "id": "C",
+          "text": "输入旁路电容与高低侧开关构成的换流环路"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "开关切换时输入旁路电容和半桥形成的换流回路电流变化最快，缩小面积能降低磁场辐射。",
+      "keyPoints": [
+        "识别开关换流时应优先优化的布局区域。"
+      ],
+      "terminology": [
+        {
+          "englishName": "High di/dt Loop",
+          "chineseName": "高电流变化率回路",
+          "role": "识别开关换流时应优先优化的布局区域。"
+        }
+      ],
+      "sourceIds": [
+        "emc-engineering"
+      ]
+    },
+    {
+      "id": "eng-201-22",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "intermediate",
+      "title": "I²C 上拉电阻 4.7 kΩ，估测总线电容 200 pF。30% 到 70% 的上升时间约多少？",
+      "options": [
+        {
+          "id": "A",
+          "text": "0.80 μs"
+        },
+        {
+          "id": "B",
+          "text": "0.08 μs"
+        },
+        {
+          "id": "C",
+          "text": "2.20 μs"
+        }
+      ],
+      "correctOptionId": "A",
+      "explanation": "单极点 RC 模型下 t_r≈0.8473RC，约 0.80 μs。再按所用速率档位核对上升时间与低电平灌电流。",
+      "keyPoints": [
+        "用开漏时钟线和数据线实现双线串行通信。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Inter-Integrated Circuit",
+          "chineseName": "集成电路间总线",
+          "role": "用开漏时钟线和数据线实现双线串行通信。"
+        }
+      ],
+      "sourceIds": [
+        "nxp-i2c"
+      ]
+    },
+    {
+      "id": "eng-201-23",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "basic",
+      "title": "测量隔离状态未知的市电一次侧节点，普通接地示波器探头的地夹可以直接夹上去吗？",
+      "options": [
+        {
+          "id": "A",
+          "text": "可以，只要切到 AC 耦合"
+        },
+        {
+          "id": "B",
+          "text": "不可以，应由合格人员使用额定合适的差分测量方案"
+        },
+        {
+          "id": "C",
+          "text": "可以，把示波器保护地断开即可"
+        }
+      ],
+      "correctOptionId": "B",
+      "explanation": "台式示波器的地夹通常接保护地，误接可能形成短路和触电危险。测量要核对差分及共模额定值、环境和安全等级。",
+      "keyPoints": [
+        "在额定范围内测量两个节点之间的电压差。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Differential Probe",
+          "chineseName": "差分探头",
+          "role": "在额定范围内测量两个节点之间的电压差。"
+        }
+      ],
+      "sourceIds": [
+        "tektronix-probes"
+      ]
+    },
+    {
+      "id": "eng-201-24",
+      "categoryId": "embedded-test",
+      "type": "single",
+      "difficulty": "advanced",
+      "title": "非隔离低压板上测得开关节点有高频振铃，换短接地弹簧后振铃明显减弱。最合理的结论是什么？",
+      "options": [
+        {
+          "id": "A",
+          "text": "所有实际振铃都已经消失"
+        },
+        {
+          "id": "B",
+          "text": "证明电感一定饱和"
+        },
+        {
+          "id": "C",
+          "text": "之前的测量环路可能引入了部分振铃"
+        }
+      ],
+      "correctOptionId": "C",
+      "explanation": "长接地线引入电感并增大拾取环路。应使用短回路复测，再区分真实振铃和探测伪影。",
+      "keyPoints": [
+        "缩短探测回路并减小寄生电感。"
+      ],
+      "terminology": [
+        {
+          "englishName": "Probe Ground Spring",
+          "chineseName": "探头接地弹簧",
+          "role": "缩短探测回路并减小寄生电感。"
+        }
+      ],
+      "sourceIds": [
+        "tektronix-probes"
       ]
     }
   ],
